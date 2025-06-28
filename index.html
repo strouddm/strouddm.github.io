@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brown & Blue Inspired Website</title>
+  <style>
+    :root {
+      --brown-dark: #5a4322;
+      --brown-medium: #a67c52;
+      --brown-light: #d2b48c;
+      --blue-dark: #22344a;
+      --blue-medium: #3a5a7a;
+      --blue-light: #7fa6c1;
+      --off-white: #f5f3ee;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, var(--blue-dark) 60%, var(--brown-light) 100%);
+      color: var(--off-white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: var(--brown-dark);
+      padding: 2rem 1rem 1rem 1rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(34,52,74,0.2);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: var(--blue-light);
+      letter-spacing: 2px;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+    .card {
+      background: rgba(34,52,74,0.85);
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(90,67,34,0.15);
+      padding: 2rem 2.5rem;
+      max-width: 400px;
+      text-align: center;
+      color: var(--brown-light);
+    }
+    .card h2 {
+      color: var(--brown-medium);
+      margin-bottom: 1rem;
+    }
+    .card p {
+      color: var(--blue-light);
+    }
+    footer {
+      background: var(--blue-medium);
+      color: var(--brown-light);
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 1rem;
+      letter-spacing: 1px;
+    }
+    @media (max-width: 600px) {
+      .card {
+        padding: 1rem;
+      }
+      header h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Brown & Blue Modern Site</h1>
+  </header>
+  <main>
+    <div class="card">
+      <h2>Welcome</h2>
+      <p>This website uses a color palette inspired by rich browns and deep blues, creating a warm and modern look.</p>
+    </div>
+  </main>
+  <footer>
+    &copy; 2024 Brown & Blue Theme
+  </footer>
+</body>
+</html>
