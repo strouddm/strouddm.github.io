@@ -1,53 +1,483 @@
+/* ==========================================================================
+   CSS Variables & Custom Properties
+   ========================================================================== */
+:root {
+  /* Colors */
+  --color-primary: #1B598A;        /* Deep blue (text & accents) */
+  --color-secondary: #16456D;      /* Slightly darker blue for hover */
+  --color-background: #f9f1e5;     /* Sand background */
+  --color-sidebar-bg: #e2d2b3;     /* Muted parchment for sidebar */
+  --color-text: #1B598A;
+  
+  /* Typography */
+  --font-family: 'Metropolis', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-size-base: 1rem;
+  --font-size-h1: 2.5rem;
+  --font-size-h2: 1.5rem;
+  --font-size-h3: 1.25rem;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-xxl: 5rem;
+  
+  /* Layout */
+  --sidebar-width: 220px;
+  --sidebar-width-tablet: 200px;
+  --content-max-width: 800px;
+  --content-max-width-large: 900px;
+  
+  /* Breakpoints */
+  --breakpoint-mobile: 768px;
+  --breakpoint-tablet: 1024px;
+  --breakpoint-desktop: 1025px;
+}
+
+/* ==========================================================================
+   Font Face Declarations
+   ========================================================================== */
+@font-face {
+  font-family: 'Metropolis';
+  src: url('./fonts/Metropolis-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('./fonts/Metropolis-ThinItalic.woff2') format('woff2');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('./fonts/Metropolis-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('./fonts/Metropolis-ExtraLightItalic.woff2') format('woff2');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('./fonts/Metropolis-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('./fonts/Metropolis-LightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('./fonts/Metropolis-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('./fonts/Metropolis-RegularItalic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('./fonts/Metropolis-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('./fonts/Metropolis-MediumItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('./fonts/Metropolis-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('./fonts/Metropolis-SemiBoldItalic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('./fonts/Metropolis-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('./fonts/Metropolis-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('./fonts/Metropolis-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('./fonts/Metropolis-ExtraBoldItalic.woff2') format('woff2');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('./fonts/Metropolis-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('./fonts/Metropolis-BlackItalic.woff2') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    margin: 0;
-    font-family: 'Georgia', serif;
-    background-color: #2a1e1a; /* rich brown */
-    color: #f4e3b2; /* gold tone */
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  display: flex;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+h1 {
+  font-weight: 700;
+  font-size: var(--font-size-h1);
+  margin: 0;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: var(--font-size-h2);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: var(--font-size-h3);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+p {
+  font-weight: 400;
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: var(--spacing-md);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-secondary);
+}
+
+/* ==========================================================================
+   Layout Components
+   ========================================================================== */
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  padding: var(--spacing-lg) var(--spacing-sm);
+  background-color: var(--color-sidebar-bg);
+  border-right: 1px solid var(--color-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
+  
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: var(--spacing-lg);
+  border: 1px solid var(--color-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.sidebar h1 {
+  font-size: var(--font-size-h3);
+  margin-bottom: var(--spacing-lg);
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.sidebar nav a {
+  display: block;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.sidebar nav a:hover {
+  text-decoration: underline;
+  color: var(--color-secondary);
+}
+
+/* Main Content */
+.content {
+  margin-left: var(--sidebar-width);
+  padding: var(--spacing-xxl);
+  max-width: var(--content-max-width);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.content section {
+  height: 100vh;
+  padding: var(--spacing-xxl);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-margin-top: 0;
+  box-sizing: border-box;
+}
+
+.content section:first-child {
+  padding-top: 0;
+}
+
+/* ==========================================================================
+   Social Icons
+   ========================================================================== */
+.social-icons {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xs);
+}
+
+.social-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--color-secondary);
+  transform: scale(1.1);
+}
+
+/* Separator */
+.separator {
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-primary);
+  border: none;
+  margin: var(--spacing-md) 0;
+  opacity: 0.6;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
   }
   
-  header {
-    background-color: #7b5e3e; /* deep gold */
-    color: #fff8e1;
-    padding: 2rem;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    padding: var(--spacing-sm);
+    border-right: none;
+    border-bottom: 1px solid var(--color-secondary);
   }
   
-  nav {
-    background-color: #3b2d26;
-    text-align: center;
-    padding: 1rem;
+  .profile-image {
+    width: 80px;
+    height: 80px;
+    margin-bottom: var(--spacing-sm);
   }
   
-  nav a {
-    color: #9dcbe0; /* soft light blue */
-    margin: 0 1rem;
+  .sidebar h1 {
+    font-size: var(--font-size-h3);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .sidebar nav {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+  }
+  
+  .sidebar nav a {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+  
+  .sidebar nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
     text-decoration: none;
-    font-weight: bold;
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
   }
   
   .content {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 1rem;
-    background-color: #3e2f28;
-    border: 1px solid #7b5e3e;
-    border-radius: 6px;
+    margin-left: 0;
+    padding: var(--spacing-lg) var(--spacing-sm);
+    max-width: 100%;
   }
   
-  h1, h2 {
-    color: #ffd88c; /* golden highlight */
+  .content section {
+    height: auto;
+    min-height: 100vh;
+    padding: var(--spacing-lg) var(--spacing-sm);
   }
   
-  footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #1f1510;
-    color: #bfb6a2;
-    font-size: 0.9rem;
+  h1 {
+    font-size: 2rem;
   }
+  
+  h2 {
+    font-size: 1.25rem;
+  }
+  
+  ul {
+    padding-left: var(--spacing-sm);
+  }
+  
+  .social-icons {
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xs);
+  }
+  
+  .social-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sidebar {
+    width: var(--sidebar-width-tablet);
+  }
+  
+  .content {
+    margin-left: var(--sidebar-width-tablet);
+    padding: var(--spacing-xl);
+  }
+  
+  .content section {
+    padding: var(--spacing-xl);
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 1025px) {
+  .content {
+    max-width: var(--content-max-width-large);
+  }
+}
+
+h1 { 
+  font-weight: 700; 
+  font-size: 2.5rem;  /* Increased from default */
+}  /* Bold */
+h2 { 
+  font-weight: 600; 
+  font-size: 1.5rem;
+}  /* Semi Bold */
+p { font-weight: 400; }   /* Regular */
+.light-text { font-weight: 300; }  /* Light */
+
   
