@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background-color: #2a1e1a; /* rich brown */
+    color: #f4e3b2; /* gold tone */
+  }
+  
+  header {
+    background-color: #7b5e3e; /* deep gold */
+    color: #fff8e1;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+  
+  nav {
+    background-color: #3b2d26;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  nav a {
+    color: #9dcbe0; /* soft light blue */
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  .content {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #3e2f28;
+    border: 1px solid #7b5e3e;
+    border-radius: 6px;
+  }
+  
+  h1, h2 {
+    color: #ffd88c; /* golden highlight */
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1f1510;
+    color: #bfb6a2;
+    font-size: 0.9rem;
+  }
+  
