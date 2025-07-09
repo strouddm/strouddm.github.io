@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{TITLE}} - David Stroud</title>
+  <meta name="description" content="{{DESCRIPTION}}" />
+  <meta name="keywords" content="David Stroud, Essays, {{KEYWORDS}}" />
+  <meta name="author" content="David Stroud" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="{{TITLE}} - David Stroud" />
+  <meta property="og:description" content="{{DESCRIPTION}}" />
+  <meta property="og:url" content="https://strouddm.github.io/essays/{{FILENAME}}.html" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:title" content="{{TITLE}} - David Stroud" />
+  <meta property="twitter:description" content="{{DESCRIPTION}}" />
+  
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="canonical" href="https://strouddm.github.io/essays/{{FILENAME}}.html" />
+</head>
+<body>
+
+  <aside class="sidebar" role="complementary">
+    <div class="profile-image">
+      <img src="../img/arrtdeco-fave-smaller.jpg" alt="David Stroud profile photo" />
+    </div>
+    
+    <!-- Mobile hamburger menu button -->
+    <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <nav class="sidebar-nav" role="navigation" aria-label="Main navigation">
+      <a href="../index.html#about">about</a>
+      <a href="../index.html#my-story">my story</a>
+      <a href="../index.html#essays" class="active-section">essays</a>
+      <a href="../index.html#projects">projects</a>
+      <a href="../index.html#research">research</a>
+    </nav>
+  </aside>
+
+  <main class="content" role="main">
+    <section class="essay-page">
+      <header class="essay-header">
+        <a href="../index.html#essays" class="back-link">← Back to Essays</a>
+      </header>
+
+      <article class="essay-content">
+        <h1>{{TITLE}}</h1>
+        
+        <div class="essay-meta">
+          <span class="essay-date">{{DATE}}</span>
+        </div>
+        
+        <p class="essay-intro">
+          {{INTRO}}
+        </p>
+
+        {{CONTENT}}
+      </article>
+
+      <footer class="essay-footer">
+        <div class="essay-tags">
+          {{TAGS}}
+        </div>
+        <a href="../index.html#essays" class="back-link">← Back to Essays</a>
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    // Mobile menu toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.querySelector('.mobile-menu-toggle');
+      const sidebarNav = document.querySelector('.sidebar-nav');
+      
+      if (menuToggle && sidebarNav) {
+        menuToggle.addEventListener('click', function() {
+          const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+          menuToggle.setAttribute('aria-expanded', !isExpanded);
+          menuToggle.classList.toggle('active');
+          sidebarNav.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = sidebarNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.classList.remove('active');
+            sidebarNav.classList.remove('active');
+          });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html> 
